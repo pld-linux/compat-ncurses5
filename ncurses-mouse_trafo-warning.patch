@@ -1,8 +1,9 @@
---- ncurses-5.2/include/curses.tail~	Sat Jun 16 13:47:06 2001
-+++ ncurses-5.2/include/curses.tail	Thu Mar 21 16:58:13 2002
-@@ -59,8 +59,6 @@
- extern NCURSES_EXPORT(int) mouseinterval (int);
- extern NCURSES_EXPORT(bool) wmouse_trafo (const WINDOW* win,int* y, int* x, bool to_screen);
+diff -urNp -x '*.orig' compat-ncurses5-5.9.20150117.org/include/curses.tail compat-ncurses5-5.9.20150117/include/curses.tail
+--- compat-ncurses5-5.9.20150117.org/include/curses.tail	2023-07-21 00:00:22.913676193 +0200
++++ compat-ncurses5-5.9.20150117/include/curses.tail	2023-07-21 00:00:24.466698467 +0200
+@@ -111,8 +111,6 @@ extern NCURSES_EXPORT(mmask_t) NCURSES_S
+ extern NCURSES_EXPORT(int)     NCURSES_SP_NAME(mouseinterval) (SCREEN*, int);
+ #endif
  
 -#define mouse_trafo(y,x,to_screen) wmouse_trafo(stdscr,y,x,to_screen)
 -

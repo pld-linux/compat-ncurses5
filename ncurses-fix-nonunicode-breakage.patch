@@ -4,13 +4,14 @@ codes - it had a chance to work on non-unicode terminal only if G1 was mapped
 to CP437 map, which is not the default; the default for G1 is VT100 map, which
 works with VT100-specific acsc string - and that's what this patch changes.
 
---- ncurses-5.9/misc/terminfo.src.orig	2011-11-05 08:32:32.280686759 +0100
-+++ ncurses-5.9/misc/terminfo.src	2011-11-05 13:37:42.217966510 +0100
-@@ -945,6 +945,7 @@
- # Using SI/SO has the drawback that it confuses screen.  SCS would work.
- # However, SCS is buggy (see comment in Debian #515609) -TD
+diff -urNp -x '*.orig' compat-ncurses5-5.9.20150117.org/misc/terminfo.src compat-ncurses5-5.9.20150117/misc/terminfo.src
+--- compat-ncurses5-5.9.20150117.org/misc/terminfo.src	2023-07-21 00:00:49.116051986 +0200
++++ compat-ncurses5-5.9.20150117/misc/terminfo.src	2023-07-21 00:00:50.115066314 +0200
+@@ -1633,6 +1633,7 @@ linux2.2|linux 2.2.x console,
+ # Further, this breaks longstanding workarounds for Linux console's line
+ # drawing (see Debian 665959) -TD
  linux2.6|linux 2.6.x console,
 +	acsc=++\,\,--..00``aaffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~,
  	rmacs=^O,
- 	sgr=\E[0;10%?%p1%t;7%;%?%p2%t;4%;%?%p3%t;7%;%?%p4%t;5%;%?%p5%t;2%;%?%p6%t;1%;%?%p7%t;8%;m%?%p9%t\016%e\017%;,
+ 	sgr=\E[0;10%?%p1%t;7%;%?%p2%t;4%;%?%p3%t;7%;%?%p4%t;5%;%?%p5%t;2%;%?%p6%t;1%;m%?%p9%t\016%e\017%;,
  	sgr0=\E[m\017, smacs=^N, use=linux2.2,
