@@ -8,7 +8,7 @@ Summary:	curses terminal control library - version 5.x for compatibility
 Summary(pl.UTF-8):	Biblioteki curses do sterowania terminalem - wersja 5.x dla zgodności
 Name:		compat-ncurses5
 Version:	%{basever}.%{patchlevel}
-Release:	1
+Release:	2
 License:	distributable
 Group:		Libraries
 Source0:	ftp://dickey.his.com/ncurses/ncurses-%{basever}.tar.gz
