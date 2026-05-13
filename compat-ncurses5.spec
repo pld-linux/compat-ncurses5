@@ -8,7 +8,7 @@ Summary:	curses terminal control library - version 5.x for compatibility
 Summary(pl.UTF-8):	Biblioteki curses do sterowania terminalem - wersja 5.x dla zgodności
 Name:		compat-ncurses5
 Version:	%{basever}.%{patchlevel}
-Release:	2
+Release:	3
 License:	distributable
 Group:		Libraries
 Source0:	ftp://dickey.his.com/ncurses/ncurses-%{basever}.tar.gz
@@ -278,10 +278,11 @@ gcc_version=%{cc_version}
 CFLAGS="%{rpmcflags} -DPURE_TERMINFO -D_FILE_OFFSET_BITS=64"
 cp -f /usr/share/automake/config.sub .
 
+%define	configuredir ..
 for t in narrowc wideclowcolor; do
 install -d obj-$t
 cd obj-$t
-../%configure \
+%configure \
 	--with-install-prefix=$RPM_BUILD_ROOT \
 	--without-ada \
 	--without-cxx \
